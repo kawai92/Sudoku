@@ -7,13 +7,20 @@ if(isset($_POST['user']) && isset($_POST['password'])) {
 
     $user = $users->login($_POST['user'], $_POST['password']);
     echo $user->getName();
-    if($user !== null) {
-        $_SESSION['user'] = $user;
-        $_SESSION['name'] = $user->getName();
-        header("location: ../game-post.php");
+    if($user !== null)
+    {
+        $_REQUEST['user'] = $user;
+        $_REQUEST['name'] = $user->getName();
+
+        $controller = new SudokuController($sudoku, $_REQUEST);
+        if($controller->isReset())
+        {
+            unset($_SESSION[SUDOKU_SESSION]);
+        }
+
+        header('Location: ../' . $controller->getPage());
         exit;
     }
 }
-
 
 header("location: ../login.php");

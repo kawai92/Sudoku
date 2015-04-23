@@ -8,6 +8,7 @@
 
 require 'game.inc.php';
 
+
 $controller = new SudokuController($sudoku, $_REQUEST);
 if($controller->isReset())
 {
