@@ -32,7 +32,7 @@ require 'format.inc.php';
 <br>
 <div id="login">
     <h2>New User</h2>
-    <form method="post" action="post/newuser-post.php">
+    <form method="post" action="post/register-post.php">
         <p>
             <label for="userid">User ID:</label><br>
             <input type="text" id="userid" name="userid"></p>

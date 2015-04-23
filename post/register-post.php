@@ -1,12 +1,12 @@
 <?php
 $login = false;
-require_once "../lib/site.inc.php";
+require_once "../game.inc.php";
 
 unset($_SESSION['newuser-error']);
 
 if($_POST['secret'] !== "super477") {
     $_SESSION['newuser-error'] = "Invalid secret!";
-    header("location: ../newuser.php");
+    header("location: ../register.php");
     exit;
 }
 
@@ -21,7 +21,7 @@ $msg = $nu->newUser(
 
 if($msg !== null) {
     $_SESSION['newuser-error'] = $msg;
-    header("location: ../newuser.php");
+    header("location: ../register.php");
     exit;
 }
 

@@ -50,13 +50,21 @@ class SudokuController {
             $this->page = 'index.php';
         }
 
+        /*else if(isset($request['user']))
+        {
+            $user = $request['user'];
+            $this->sudoku->setPlayer($user->getName());
+            $this->page = 'game.php';
+        }*/
+
         else if(isset($request['name']))
         {
             $this->sudoku->setPlayer($request['name']);
             $this->page = 'game.php';
         }
 
-        else if(!isset($request['name'])){
+        else if(!isset($request['name']))
+        {
             $this->sudoku->setPlayer("Guest Player");
             $this->page = 'game.php';
         }
