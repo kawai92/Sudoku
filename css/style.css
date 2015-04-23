@@ -1,0 +1,208 @@
+
+html {
+    background-position: center top;
+    background-image: url("../img/bgcolor.jpg");
+    padding-bottom: 2em;
+    background-color: white;
+    padding-top: 10px;
+}
+
+h1 {
+    font-size: 3em;
+}
+
+body {
+    font-family: "Arial", sans-serif;
+    background-color: white;
+    margin: 0 auto;
+    width: 750px;
+}
+
+header {
+    background-color: black;
+}
+
+header a {
+    color: white
+}
+
+h1 {
+    color: black;
+    text-align: center;
+}
+
+h2 {
+    color: black;
+    text-align: center;
+}
+
+h3 {
+    color: black;
+    text-align: center;
+}
+
+a p {
+    margin: auto;
+    display: table;
+    text-align: center;
+}
+
+nav {
+    float: right;
+    font-size: 80%;
+    font-weight: bold;
+    font-family: "Arial", sans-serif;
+}
+
+nav a {
+    color: white;
+}
+
+img {
+    border: 10px solid white;
+}
+
+body {
+    border: 3px solid black;
+}
+
+.img-container {
+    height: 345px;
+    width: 620px;
+    border: 2px solid black;
+    margin: 0 auto;
+}
+
+.note {
+    font-size: 0.75em;
+    text-align: center;
+    font-weight: bold;
+}
+
+.general {
+    font-size: 1.25em;
+    text-align: center;
+    background-color: white;
+}
+
+.general a {
+    color: black;
+}
+
+.general b {
+    font-size: 1.0em;
+}
+
+.instructions {
+    font-family: "Arial", sans-serif;
+    margin: 18px;
+    text-align: justify;
+}
+
+.action-text {
+    font-size: 1em;
+    text-align: center;
+}
+
+table {
+    border: 3pt solid black;
+
+    border-spacing: 0;
+    margin: auto;
+    margin-inside: 0;
+    padding: 0 0 0 0;
+    height: 150px;
+    width: 165px;
+}
+
+#subTable{
+    border: 2pt solid black;
+    border-collapse: collapse;
+    border-spacing: 0;
+    margin-left: 0;
+    margin-right: 0;
+    margin-inside: 0;
+    padding: 0 0 0 0;
+    height: 150px;
+    width: 165px;
+}
+
+#subTable td {
+    border: 2pt solid black;
+    border-collapse: collapse;
+    border-spacing: 0;
+    width: 50px;
+    padding: 0 0 0 0;
+}
+#subTable a {
+    text-decoration: none;
+}
+
+#CellTable{
+    font-size: 0.5px;
+    border: none;
+    border-collapse: collapse;
+    border-spacing: 0;
+    margin: 0;
+    padding: 0 0 0 0;
+    width: inherit;
+    height: inherit;
+    line-height: 0;
+}
+
+#CellTable td{
+    font-size: 0.5px;
+    font-weight: bold;
+    border: none;
+    border-collapse: collapse;
+    border-spacing: 0;
+    padding: 0 0 0 0;
+    height: 0.7em;
+    font-weight: bold;
+    margin: 0;
+    color: blue;
+}
+
+#clueCell td {
+    border: none;
+    border-collapse: collapse;
+    padding: 0 0 0 0;
+    margin: 0;
+}
+
+#emptyCell a{
+    color: green;
+    font-weight: bold;
+    font-style: italic;
+    padding: 0 0 0 0;
+}
+
+#emptyCell td {
+    line-height: 0;
+    height: inherit;
+    width: inherit;
+    padding: 0 0 0 0;
+}
+
+#Cell {
+    color: green;
+}
+
+
+#HardCell {
+    font-weight: bold;
+}
+
+table td {
+    border: 1pt solid black;
+    border-spacing: 0;
+    border-collapse: collapse;
+    text-align: center;
+    padding: 0 0 0 0;
+}
+
+#login {
+    width: 15em;
+    margin: 0em auto 0 auto;
+    padding-top: 0em;
+}
