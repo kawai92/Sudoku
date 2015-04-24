@@ -1,12 +1,12 @@
 <?php
 /**
  * Created by PhpStorm.
- * User: AbdullahAlkawai
- * Date: 4/21/15
- * Time: 7:04 PM
+ * User: Joe
+ * Date: 4/22/2015
+ * Time: 9:42 PM
  */
 
-class Cells extends Table {
+class Clues extends Table{
 
     /**
      * Constructor
@@ -14,7 +14,7 @@ class Cells extends Table {
      */
     public function __construct(Site $site)
     {
-        parent::__construct($site, "blockcell");
+        parent::__construct($site, "clue");
     }
 
 }
