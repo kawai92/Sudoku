@@ -73,7 +73,7 @@ SQL;
 <html>
 <p>Greetings, $name,</p>
 
-<p>Welcome to Sightings. In order to complete your registration,
+<p>Welcome to Sudoku. In order to complete your registration,
 please verify your email address by visiting the following link:</p>
 
 <p><a href="$link">$link</a></p>
