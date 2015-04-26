@@ -28,7 +28,7 @@ require 'format.inc.php';
 <div id="login">
     <h2>Validation</h2>
     <p>Email has been sent to you for validation. Please click on the validation link before you try to log in.</p>
-    <a href="./">go to login</a>
+    <a href="./">Go to Login Page</a>
 </div>
 <br>
 </body>
