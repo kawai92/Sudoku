@@ -1,4 +1,5 @@
 <?php
+//phpinfo();
 /**
  * Created by PhpStorm.
  * User: Aries

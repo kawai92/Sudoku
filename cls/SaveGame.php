@@ -76,10 +76,10 @@ SQL;
                 $statement = $pdo->prepare($sql);
                 if($statement->execute(array($blockID,
                                              $userid,
-                                             $b[$row][$col],
+                                             $b[$row][$col]->showValue(),
                                              $row,
                                              $col,
-                                             $s[$row][$col]))){
+                                             $s[$row][$col]->showValue()))){
                     return true;
                 }
                 else{

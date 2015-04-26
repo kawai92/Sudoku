@@ -37,7 +37,7 @@ require 'format.inc.php';
     <br>
     <p><b><a href="game-post.php?g=1">Give up!</a></b></p>
     <br>
-    <p><b><a href = "save-post.php" > Save Current Game </a ></b ></p >
+    <p><b><a href = "post/save-post.php" > Save Current Game </a ></b ></p >
     <p><b><a href = "load-post.php" > Load Previous Game </a></b></p>
 </div>
 </body>

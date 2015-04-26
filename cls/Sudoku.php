@@ -155,4 +155,11 @@ class Sudoku
         $this->blockId = $id;
     }
 
+    public function getBoard(){
+        return $this->board;
+    }
+    public function getAnswer(){
+        return $this->solution;
+    }
+
 }

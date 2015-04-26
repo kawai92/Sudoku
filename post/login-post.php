@@ -17,7 +17,7 @@ if(isset($_POST['user']) && isset($_POST['password'])) {
         {
             unset($_SESSION[SUDOKU_SESSION]);
         }
-
+        $_SESSION['user'] = $user;
         header('Location: ../' . $controller->getPage());
         exit;
     }
