@@ -11,6 +11,9 @@ class SudokuController {
     private $sudoku;   // The Sudoku object we are controlling
     private $page;     // The next page we will go to
     private $reset = false; // True if we need to reset the game
+    private $name; // The player name WE USES AS ID
+
+    public $isGuest; //if yes, is guest playing
 
 
     public function __construct(Sudoku $sudoku, $request) {
@@ -59,12 +62,15 @@ class SudokuController {
 
         else if(isset($request['name']))
         {
+            $this->isGuest = false;
+            $this->name = $request['name'];
             $this->sudoku->setPlayer($request['name']);
             $this->page = 'game.php';
         }
 
         else if(!isset($request['name']))
         {
+            $this->isGuest = true;
             $this->sudoku->setPlayer("Guest Player");
             $this->page = 'game.php';
         }
@@ -157,5 +163,13 @@ class SudokuController {
             }
         }
         return $condition;
+    }
+
+    public function getUserName(){
+        if($this->isGuest()){
+            return "Guest Player";
+        }else{
+            return $this->name;
+        }
     }
 }

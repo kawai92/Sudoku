@@ -6,26 +6,26 @@
  * Time: 4:21 PM
  */
 
-class SaveGame extends Table{
+class SaveClues extends Table{
 
     public function __construct(Site $site){
-        parent::__construct($site,"userblocks");
+        parent::__construct($site,"blockclues");
     }
 
 
     /**
-     * @param $userid the owner of game we want to save
+     * @param $blockID the block we want to save our clue table
      */
-    function ifExist($userid){
+    function ifExist($blockID){
         $sql =<<<SQL
 SELECT * FROM $this->tableName
 
-WHERE userid=?
+WHERE blockID=?
 
 SQL;
         $pdo = $this->pdo();
         $statement = $pdo->prepare($sql);
-        $statement->execute(array($userid));
+        $statement->execute(array($blockID));
         if($statement->rowCount()===0){
             return false;
         }
@@ -36,16 +36,16 @@ SQL;
 
     }
 
-    function clear($userid){
+    function clear($blockID){
         $sql =<<<SQL
 DELETE FROM $this->tableName
 
-WHERE userid=?
+WHERE blockID=?
 
 SQL;
         $pdo = $this->pdo();
         $statement = $pdo->prepare($sql);
-        if($statement->execute(array($userid))){
+        if($statement->execute(array($blockID))){
             return true;
         }
         else{
@@ -55,31 +55,30 @@ SQL;
 
 
     /**
-     * @param $userid the owner of game we want to save
-     * @param $b the game board we want to save
-     * @param $s the solution we want to save
+     * @param $blockID, one block we want to save our clues in
+     * @param $b the clue board we want to save
      */
-    function saveGame($userid,$b,$s){
+    function saveClues($blockID,$b){
         //if there is one game has saved under this user
-        if($this->ifExist($userid)){
-            $this->clear($userid);
+        if($this->ifExist($blockID)){
+            $this->clear($blockID);
         }
 
         $blockID = 0; //block id we saved for one user, start from 0
         for($row = 0;$row < 9;$row++){
             for($col = 0;$col < 9;$col++){
-                   $sql =<<<SQL
-INSERT INTO $this->tableName(id,userid,value,row,col,sol) values(?,?,?,?,?,?)
+                $sql =<<<SQL
+INSERT INTO $this->tableName(blockID,value,row,col) values(?,?,?,?)
 
 SQL;
                 $pdo = $this->pdo();
                 $statement = $pdo->prepare($sql);
-                if($statement->execute(array($blockID,
-                                             $userid,
-                                             $b[$row][$col],
-                                             $row,
-                                             $col,
-                                             $s[$row][$col]))){
+                if($statement->execute(array(
+                    $blockID,
+                    $b[$row][$col],
+                    $row,
+                    $col
+                    ))){
                     return true;
                 }
                 else{
